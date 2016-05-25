@@ -1,0 +1,156 @@
+﻿<Window x:Class="Radiation_project.FotoVoltaico"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Radiation_project"
+        mc:Ignorable="d"
+        Title="FotoVoltaico" Height="716" Width="965.691"
+        Background="Gray" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <GroupBox Margin="10,10,644,540">
+            <GroupBox.Header>1-Proveedor</GroupBox.Header>
+            <StackPanel Margin="0,0,-2,2">
+                <ScrollViewer Height="106" Margin="0,0,107,0" >
+                    <ListBox Name="cmbProveedores">
+                        <ListBoxItem Content="Orange Solar Power"/>
+                        <ListBoxItem Content="Resun Solar Energy" />
+                        <ListBoxItem Content="Changzhou GS Energy" />
+                        <ListBoxItem Content="CSG PVTech Co" />
+                        <ListBoxItem Content="Tamesol Desa S.L." />
+                        <ListBoxItem Content="Jiangsu Runda PV Co" />
+                        <ListBoxItem Content="Sky Energy Indonesia" />
+                        <ListBoxItem Content="Anhui Daheng Energy Technology" />
+                        <ListBoxItem Content="Luxen Solar Energy Co" />
+                        <ListBoxItem Content="Sun Electronics International" />
+                        <ListBoxItem Content="Infinity New Energy Co" />
+                        <ListBoxItem Content="Suzhou Suncome Solar Science" />
+                        <ListBoxItem Content="Jiangyin Shine Science and Tech" />
+                        <ListBoxItem Content="Chinaland Solar Energy Co" />
+                        <ListBoxItem Content="Jetion Solar (China) Co" />
+                        <ListBoxItem Content="Econess Energy Co" />
+                        <ListBoxItem Content="YY Solar Co., Ltd." />
+                        <ListBoxItem Content="TN Solar" />
+                        <ListBoxItem Content="Jinhua Dokio Technology Co." />
+                        <ListBoxItem Content="Risen Energy Co., Ltd." />
+                        <ListBoxItem Content="Infinity New Energy Co., Ltd." />
+                    </ListBox>
+                </ScrollViewer>
+            </StackPanel>
+        </GroupBox>
+        <Button Content="Select"
+		HorizontalAlignment="Left"
+		Margin="216,71,0,0"
+		VerticalAlignment="Top"
+		Width="75"
+                Click="toModelo"
+		/>
+
+        <GroupBox Margin="10,176,644,375">
+            <GroupBox.Header>2-No de modelo</GroupBox.Header>
+            <StackPanel Margin="0,0,-2,2">
+                <ScrollViewer Height="106" Margin="0,0,107,0" >
+                    <ListBox Name="cmbModelo">
+                    </ListBox>
+                </ScrollViewer>
+            </StackPanel>
+        </GroupBox>
+        <Button Content="Select"
+            		HorizontalAlignment="Left"
+            		VerticalAlignment="Top"
+            		Width="75" Margin="216,234,0,0"
+                Click="toInversor"
+		/>
+
+        <GroupBox Margin="10,336,644,215">
+            <GroupBox.Header>3-Inversor</GroupBox.Header>
+            <StackPanel Margin="0,0,-2,2">
+                <ScrollViewer Height="106" Margin="0,0,107,0" >
+                    <ListBox x:Name="cmdInversor"/>
+                </ScrollViewer>
+            </StackPanel>
+        </GroupBox>
+        <Button Content="Select"
+            		HorizontalAlignment="Left"
+            		VerticalAlignment="Top"
+            		Width="75" Margin="216,376,0,0"
+                               Click="toRegulador"
+
+		/>
+
+        <GroupBox Margin="10,497,644,54">
+            <GroupBox.Header>4-Regulador</GroupBox.Header>
+            <StackPanel Margin="0,0,-2,2">
+                <ScrollViewer Height="106" Margin="0,0,107,0" >
+                    <ListBox Name="cmdRegulador"/>
+                </ScrollViewer>
+            </StackPanel>
+        </GroupBox>
+        <Button Content="Select"
+        	HorizontalAlignment="Left"
+        	VerticalAlignment="Top"
+        	Width="75" Margin="216,532,0,0"
+            Click="toBateria"   
+		/>
+
+        <GroupBox Margin="349,11,305,540">
+            <GroupBox.Header>5-Bateria</GroupBox.Header>
+            <StackPanel Margin="0,0,-2,2">
+                <ScrollViewer Height="106" Margin="0,0,107,0" >
+                    <ListBox x:Name="cmdBateria"/>
+                </ScrollViewer>
+            </StackPanel>
+        </GroupBox>
+        <Button Content="Select"
+        	HorizontalAlignment="Left"
+        	VerticalAlignment="Top"
+        	Width="76" Margin="562,71,0,0"
+                Click="toBidireccional"
+        	
+		/>
+        <GroupBox Margin="349,176,305,375">
+            <GroupBox.Header>6-Medidor Bidireccional</GroupBox.Header>
+            <StackPanel Margin="0,0,-2,2">
+                <ScrollViewer Height="106" Margin="0,0,107,0" >
+                    <ListBox x:Name="cmdBidireccional"/>
+                </ScrollViewer>
+            </StackPanel>
+        </GroupBox>
+        <Button Content="Select"
+        	HorizontalAlignment="Left"
+        	VerticalAlignment="Top"
+        	Width="76" Margin="562,239,0,0"
+                Click="toMonitor"
+        	
+		/>
+        <GroupBox Margin="349,336,305,215">
+            <GroupBox.Header>7-Sistema de monitorización</GroupBox.Header>
+            <StackPanel Margin="0,0,-2,2">
+                <ScrollViewer Height="106" Margin="0,0,107,0" >
+                    <ListBox x:Name="cmdMonitor"/>
+                </ScrollViewer>
+            </StackPanel>
+        </GroupBox>
+        <Button Content="Select"
+        	HorizontalAlignment="Left"
+        	VerticalAlignment="Top"
+        	Width="76" Margin="562,398,0,0"
+                Click="toList"
+		/>
+        <ScrollViewer Margin="678,26,10,375" >
+            <ListBox x:Name="cmdList" Width="390"/>
+        </ScrollViewer>
+        <Button Content="Back"
+        	HorizontalAlignment="Left"
+        	VerticalAlignment="Top"
+        	Width="75" Margin="563,572,0,0"
+        	Click="toBack"   
+		/>
+        <Button Content="Next"
+        	HorizontalAlignment="Left"
+        	VerticalAlignment="Top"
+        	Width="75" Margin="734,572,0,0"
+        	Click="toNext" RenderTransformOrigin="2.18,0.725"   
+		/>
+    </Grid>
+</Window>

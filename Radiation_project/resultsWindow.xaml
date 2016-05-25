@@ -1,0 +1,32 @@
+﻿<Window x:Class="Radiation_project.resultsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Radiation_project"
+        mc:Ignorable="d"
+        Title="Radiation Results" Height="339.116" Width="575.789"
+        Background="Gray" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="451*"/>
+            <ColumnDefinition Width="117*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="label" Content="Latitude: " HorizontalAlignment="Left" Margin="42,80,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="Longitude: " HorizontalAlignment="Left" Margin="42,132,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="# of Days:" HorizontalAlignment="Left" Margin="42,171,0,0" VerticalAlignment="Top" Width="59"/>
+        <Label x:Name="label1_Copy" Content="WS: " HorizontalAlignment="Left" Margin="408,132,0,0" VerticalAlignment="Top" Width="85" Grid.ColumnSpan="2"/>
+        <Label x:Name="label1_Copy1" Content="Oz:" HorizontalAlignment="Left" Margin="408,171,0,0" VerticalAlignment="Top" Width="85" Grid.ColumnSpan="2"/>
+        <Label x:Name="label1_Copy2" Content="Ho:" HorizontalAlignment="Left" Margin="168,239,0,0" VerticalAlignment="Top" Width="33"/>
+        <Button x:Name="button" Content="Termosolar" HorizontalAlignment="Left" Margin="26,267,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" Grid.Column="1"/>
+        <Button x:Name="button1" Content="Back" HorizontalAlignment="Left" Margin="10,267,0,0" VerticalAlignment="Top" Width="75" Click="toMain"/>
+        <Label x:Name="latitudeLabel" Content="0.00" HorizontalAlignment="Left" Margin="106,80,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label x:Name="longitudeLabel" Content="0.00" HorizontalAlignment="Left" Margin="106,132,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label x:Name="daysLabel" Content="0" HorizontalAlignment="Left" Margin="106,171,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label x:Name="wsLabel" Content="0.00" HorizontalAlignment="Left" Margin="5.716,132,0,0" VerticalAlignment="Top" Width="95" Grid.Column="1"/>
+        <Label x:Name="ozLabel" Content="0.00" HorizontalAlignment="Left" Margin="5.716,171,0,0" VerticalAlignment="Top" Width="95" Grid.Column="1"/>
+        <Label x:Name="h0Label" Content="0.00" HorizontalAlignment="Left" Margin="201,239,0,0" VerticalAlignment="Top" Width="95"/>
+        <Button x:Name="button_Copy" Content="FotoVoltaico" HorizontalAlignment="Left" Margin="366,267,0,0" VerticalAlignment="Top" Width="75" Click="toFoto"/>
+
+    </Grid>
+</Window>
