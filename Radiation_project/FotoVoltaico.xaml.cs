@@ -513,7 +513,7 @@ namespace Radiation_project
 
         private void toBack(object sender, RoutedEventArgs e)
         {
-            Thermo f = new Thermo(start, end, lat, longi);
+            resultsWindow f = new resultsWindow(start, end, lat, longi);
             f.Show();
             Close();
 
