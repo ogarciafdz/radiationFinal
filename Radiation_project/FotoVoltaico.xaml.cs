@@ -35,25 +35,37 @@ namespace Radiation_project
             this.end = end;
             this.lat = lat;
             this.longi = longi;
-            this.fotoVoltaico = fotoVoltaico;
+        }
+
+        private void cmdList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void toAtras(object sender, RoutedEventArgs e)
+        {
+            resultsWindow f = new resultsWindow(start, end, lat, longi);
+            f.Show();
+            Close();
+
+        }
+
+        private void toAdelante(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void toModelo(object sender, RoutedEventArgs e)
-        { 
+        {
             try
             {
 
                 string selected = cmbProveedores.SelectedItems[0].ToString().Substring(37);
 
                 cmbModelo.Items.Clear();
-                cmdInversor.Items.Clear();
-                cmdRegulador.Items.Clear();
-                cmdBateria.Items.Clear();
-                cmdBidireccional.Items.Clear();
-                cmdMonitor.Items.Clear();
                 cmdList.Items.Clear();
                 termoSolar.Clear();
-                cmdList.Items.Add("1-> " + selected);
+                cmdList.Items.Add("Marca: " + selected);
                 termoSolar.Add(selected);
 
                 if (selected.Equals("Orange Solar Power"))
@@ -273,312 +285,55 @@ namespace Radiation_project
 
         private void toInversor(object sender, RoutedEventArgs e)
         {
-            try
+
             {
 
                 string selected = cmbModelo.SelectedItems[0].ToString();
+                string compA, compB, compC, compD, compE;
 
-                cmdInversor.Items.Clear();
-                cmdRegulador.Items.Clear();
-                cmdBateria.Items.Clear();
-                cmdBidireccional.Items.Clear();
-                cmdMonitor.Items.Clear();
-
-                cmdInversor.Items.Add("HOSOLA Smart 3000TL");
-                cmdList.Items.Add("2-> " + selected);
-                termoSolar.Add(selected);
-
-                if (cmdList.Items.Count > 7)
-                {
-                    cmdList.Items.RemoveAt(6);
-                    termoSolar.RemoveAt(6);
-
-                }
-
-                if (cmdList.Items.Count > 6)
-                {
-                    cmdList.Items.RemoveAt(5);
-                    termoSolar.RemoveAt(5);
-
-
-                }
-
-                if (cmdList.Items.Count > 5)
-                {
-                    cmdList.Items.RemoveAt(4);
-                    termoSolar.RemoveAt(4);
-
-
-                }
-
-                if (cmdList.Items.Count > 4)
-                {
-                    cmdList.Items.RemoveAt(3);
-                    termoSolar.RemoveAt(3);
-
-
-                }
-
-                if (cmdList.Items.Count > 3)
-                {
-                    cmdList.Items.RemoveAt(2);
-                    termoSolar.RemoveAt(2);
-
-
-                }
-
+                compA = "HOSOLA Smart 3000TL";
+                compB = "AERL SRMVW";
+                compC = "Trojan Battery Company 27-Gel";
+                compD = "CENTRON C1S";
+                compE = "MONSOL Quick Domo";
                 if (cmdList.Items.Count > 2)
                 {
-                    cmdList.Items.RemoveAt(1);
-                    termoSolar.RemoveAt(1);
+                    for (int i = 6; i > 0; i--)
+                    {
+                        cmdList.Items.RemoveAt(i);
+                        termoSolar.RemoveAt(i);
+                    }
+
 
                 }
 
-            }
-            catch (ArgumentOutOfRangeException ex)
-            {
-                MessageBox.Show("Se tiene que seleccionar una opción");
-            }
-        }
 
-        private void toRegulador(object sender, RoutedEventArgs e)
-        {
-            try
-            {
 
-                string selected = cmdInversor.SelectedItems[0].ToString();
+                cmdList.Items.Add("Modelo: " + selected);
+                cmdList.Items.Add("Inversor: " + compA);
+                cmdList.Items.Add("Regulador: " + compB);
+                cmdList.Items.Add("Bateria: " + compC);
+                cmdList.Items.Add("Medidor Bidireccional: " + compD);
+                cmdList.Items.Add("Sistena de monitorizacion: " + compE);
 
-                cmdRegulador.Items.Clear();
-                cmdBateria.Items.Clear();
-                cmdBidireccional.Items.Clear();
-                cmdMonitor.Items.Clear();
-
-                cmdRegulador.Items.Add("AERL SRMVW");
-                cmdList.Items.Add("3-> " + selected);
                 termoSolar.Add(selected);
+                termoSolar.Add(compA);
+                termoSolar.Add(compB);
+                termoSolar.Add(compC);
+                termoSolar.Add(compD);
+                termoSolar.Add(compE);
 
 
-                if (cmdList.Items.Count > 7)
-                {
-                    cmdList.Items.RemoveAt(6);
-                    termoSolar.RemoveAt(6);
 
 
-                }
-
-                if (cmdList.Items.Count > 6)
-                {
-                    cmdList.Items.RemoveAt(5);
-                    termoSolar.RemoveAt(5);
 
 
-                }
 
-                if (cmdList.Items.Count > 5)
-                {
-                    cmdList.Items.RemoveAt(4);
-                    termoSolar.RemoveAt(4);
-
-
-                }
-
-                if (cmdList.Items.Count > 4)
-                {
-                    cmdList.Items.RemoveAt(3);
-                    termoSolar.RemoveAt(3);
-
-
-                }
-
-                if (cmdList.Items.Count > 3)
-                {
-                    cmdList.Items.RemoveAt(2);
-                    termoSolar.RemoveAt(2);
-
-
-                }
-
-            }
-            catch (ArgumentOutOfRangeException ex)
-            {
-                MessageBox.Show("Se tiene que seleccionar una opción");
             }
 
         }
 
-        private void toBateria(object sender, RoutedEventArgs e)
-        {
-            try
-            {
 
-                string selected = cmdRegulador.SelectedItems[0].ToString();
-
-                cmdBateria.Items.Clear();
-                cmdBidireccional.Items.Clear();
-                cmdMonitor.Items.Clear();
-
-                cmdBateria.Items.Add("Trojan Battery Company 27-Gel");
-                termoSolar.Add(selected);
-
-                cmdList.Items.Add("4-> " + selected);
-
-                if (cmdList.Items.Count > 7)
-                {
-                    cmdList.Items.RemoveAt(6);
-                    termoSolar.RemoveAt(6);
-
-
-                }
-
-                if (cmdList.Items.Count > 6)
-                {
-                    cmdList.Items.RemoveAt(5);
-                    termoSolar.RemoveAt(5);
-
-
-                }
-
-                if (cmdList.Items.Count > 5)
-                {
-                    cmdList.Items.RemoveAt(4);
-                    termoSolar.RemoveAt(4);
-
-                }
-                if (cmdList.Items.Count > 4)
-                {
-                    cmdList.Items.RemoveAt(3);
-                    termoSolar.RemoveAt(3);
-
-                }
-
-            }
-            catch (ArgumentOutOfRangeException ex)
-            {
-                MessageBox.Show("Se tiene que seleccionar una opción");
-            }
-
-
-        }
-
-        private void toBidireccional(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-
-                string selected = cmdBateria.SelectedItems[0].ToString();
-
-                cmdBidireccional.Items.Clear();
-                cmdMonitor.Items.Clear();
-
-                cmdBidireccional.Items.Add("CENTRON C1S");
-                cmdList.Items.Add("5-> " + selected);
-                termoSolar.Add(selected);
-
-
-                if (cmdList.Items.Count > 7)
-                {
-                    cmdList.Items.RemoveAt(6);
-                    termoSolar.RemoveAt(6);
-
-
-                }
-
-                if (cmdList.Items.Count > 6)
-                {
-                    cmdList.Items.RemoveAt(5);
-                    termoSolar.RemoveAt(5);
-
-
-                }
-
-                if (cmdList.Items.Count > 5)
-                {
-                    cmdList.Items.RemoveAt(4);
-                    termoSolar.RemoveAt(4);
-
-
-                }
-
-            }
-            catch (ArgumentOutOfRangeException ex)
-            {
-                MessageBox.Show("Se tiene que seleccionar una opción");
-            }
-        }
-
-        private void toNext(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void toBack(object sender, RoutedEventArgs e)
-        {
-            resultsWindow f = new resultsWindow(start, end, lat, longi);
-            f.Show();
-            Close();
-
-        }
-
-        private void toMonitor(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-
-                string selected = cmdBidireccional.SelectedItems[0].ToString();
-
-            cmdMonitor.Items.Clear();
-
-            cmdMonitor.Items.Add("MONSOL Quick Domo");
-                cmdList.Items.Add("6-> " + selected);
-                termoSolar.Add(selected);
-
-
-                if (cmdList.Items.Count > 7)
-                {
-                    cmdList.Items.RemoveAt(6);
-                    termoSolar.RemoveAt(6);
-
-
-                }
-
-                if (cmdList.Items.Count > 6)
-                {
-                    cmdList.Items.RemoveAt(5);
-                    termoSolar.RemoveAt(5);
-
-
-                }
-
-            }
-            catch (ArgumentOutOfRangeException ex)
-            {
-                MessageBox.Show("Se tiene que seleccionar una opción");
-            }
-        }
-
-        private void toList(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-
-            string selected = cmdMonitor.SelectedItems[0].ToString();
-
-                cmdList.Items.Add("7-> " + selected);
-                termoSolar.Add(selected);
-
-
-                if (cmdList.Items.Count > 7)
-                {
-                    cmdList.Items.RemoveAt(6);
-                    termoSolar.RemoveAt(6);
-
-                }
-            }
-            catch (ArgumentOutOfRangeException ex)
-            {
-                MessageBox.Show("Se tiene que seleccionar una opción");
-            }
-        }
     }
-
 }
+

@@ -5,14 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Radiation_project"
         mc:Ignorable="d"
-        Title="FotoVoltaico" Height="716" Width="965.691"
+        Title="FotoVoltaico" Height="543.5" Width="1106.191"
         Background="Gray" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <GroupBox Margin="10,10,644,540">
-            <GroupBox.Header>1-Proveedor</GroupBox.Header>
-            <StackPanel Margin="0,0,-2,2">
-                <ScrollViewer Height="106" Margin="0,0,107,0" >
-                    <ListBox Name="cmbProveedores">
+    <Grid Margin="0,0,2,117">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="278*"/>
+            <RowDefinition Height="119*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Margin="27,26,466,27.5">
+            <GroupBox.Header>Proveedor</GroupBox.Header>
+            <StackPanel Margin="10,27,116.4,-40.4">
+                <ScrollViewer Height="145" HorizontalAlignment="Left" Width="444" >
+                    <ListBox x:Name="cmbProveedores">
                         <ListBoxItem Content="Orange Solar Power"/>
                         <ListBoxItem Content="Resun Solar Energy" />
                         <ListBoxItem Content="Changzhou GS Energy" />
@@ -40,117 +44,45 @@
         </GroupBox>
         <Button Content="Select"
 		HorizontalAlignment="Left"
-		Margin="216,71,0,0"
+		Margin="515,117,0,0"
 		VerticalAlignment="Top"
 		Width="75"
                 Click="toModelo"
 		/>
 
-        <GroupBox Margin="10,176,644,375">
-            <GroupBox.Header>2-No de modelo</GroupBox.Header>
-            <StackPanel Margin="0,0,-2,2">
-                <ScrollViewer Height="106" Margin="0,0,107,0" >
-                    <ListBox Name="cmbModelo">
-                    </ListBox>
+        <GroupBox Margin="27,6.5,466,-72" Grid.Row="1">
+            <GroupBox.Header>No de modelo</GroupBox.Header>
+            <StackPanel Margin="10,32,-12.6,-75.4">
+                <ScrollViewer Height="106" Margin="0,0,126.4,0" >
+                    <ListBox x:Name="cmbModelo" Height="156" Width="436"/>
                 </ScrollViewer>
             </StackPanel>
         </GroupBox>
         <Button Content="Select"
             		HorizontalAlignment="Left"
             		VerticalAlignment="Top"
-            		Width="75" Margin="216,234,0,0"
-                Click="toInversor"
+            		Width="75" Margin="539,94.5,0,0"
+                Click="toInversor" RenderTransformOrigin="1.71,1.346" Grid.Row="1"
 		/>
-
-        <GroupBox Margin="10,336,644,215">
-            <GroupBox.Header>3-Inversor</GroupBox.Header>
-            <StackPanel Margin="0,0,-2,2">
-                <ScrollViewer Height="106" Margin="0,0,107,0" >
-                    <ListBox x:Name="cmdInversor"/>
-                </ScrollViewer>
-            </StackPanel>
-        </GroupBox>
-        <Button Content="Select"
-            		HorizontalAlignment="Left"
-            		VerticalAlignment="Top"
-            		Width="75" Margin="216,376,0,0"
-                               Click="toRegulador"
-
-		/>
-
-        <GroupBox Margin="10,497,644,54">
-            <GroupBox.Header>4-Regulador</GroupBox.Header>
-            <StackPanel Margin="0,0,-2,2">
-                <ScrollViewer Height="106" Margin="0,0,107,0" >
-                    <ListBox Name="cmdRegulador"/>
-                </ScrollViewer>
-            </StackPanel>
-        </GroupBox>
-        <Button Content="Select"
-        	HorizontalAlignment="Left"
-        	VerticalAlignment="Top"
-        	Width="75" Margin="216,532,0,0"
-            Click="toBateria"   
-		/>
-
-        <GroupBox Margin="349,11,305,540">
-            <GroupBox.Header>5-Bateria</GroupBox.Header>
-            <StackPanel Margin="0,0,-2,2">
-                <ScrollViewer Height="106" Margin="0,0,107,0" >
-                    <ListBox x:Name="cmdBateria"/>
-                </ScrollViewer>
-            </StackPanel>
-        </GroupBox>
-        <Button Content="Select"
-        	HorizontalAlignment="Left"
-        	VerticalAlignment="Top"
-        	Width="76" Margin="562,71,0,0"
-                Click="toBidireccional"
-        	
-		/>
-        <GroupBox Margin="349,176,305,375">
-            <GroupBox.Header>6-Medidor Bidireccional</GroupBox.Header>
-            <StackPanel Margin="0,0,-2,2">
-                <ScrollViewer Height="106" Margin="0,0,107,0" >
-                    <ListBox x:Name="cmdBidireccional"/>
-                </ScrollViewer>
-            </StackPanel>
-        </GroupBox>
-        <Button Content="Select"
-        	HorizontalAlignment="Left"
-        	VerticalAlignment="Top"
-        	Width="76" Margin="562,239,0,0"
-                Click="toMonitor"
-        	
-		/>
-        <GroupBox Margin="349,336,305,215">
-            <GroupBox.Header>7-Sistema de monitorización</GroupBox.Header>
-            <StackPanel Margin="0,0,-2,2">
-                <ScrollViewer Height="106" Margin="0,0,107,0" >
-                    <ListBox x:Name="cmdMonitor"/>
-                </ScrollViewer>
-            </StackPanel>
-        </GroupBox>
-        <Button Content="Select"
-        	HorizontalAlignment="Left"
-        	VerticalAlignment="Top"
-        	Width="76" Margin="562,398,0,0"
-                Click="toList"
-		/>
-        <ScrollViewer Margin="678,26,10,375" >
-            <ListBox x:Name="cmdList" Width="390"/>
+        <ScrollViewer Margin="678,26,10,27.5" >
+            <ListBox x:Name="cmdList" Width="404" Height="236" SelectionChanged="cmdList_SelectionChanged"/>
         </ScrollViewer>
         <Button Content="Back"
         	HorizontalAlignment="Left"
+        	Margin="750,100,0,-8"
         	VerticalAlignment="Top"
-        	Width="75" Margin="563,572,0,0"
-        	Click="toBack"   
+        	Width="76"
+            
+        	Click="toAtras" Height="27" RenderTransformOrigin="5.081,10.786"
+		Grid.Row="1"
 		/>
         <Button Content="Next"
         	HorizontalAlignment="Left"
+        	Margin="946,100,0,-8"
         	VerticalAlignment="Top"
-        	Width="75" Margin="734,572,0,0"
-        	Click="toNext" RenderTransformOrigin="2.18,0.725"   
+        	Width="76"
+        	Click="toAdelante" Height="27" RenderTransformOrigin="5.081,10.786"
+		Grid.Row="1"
 		/>
     </Grid>
 </Window>
