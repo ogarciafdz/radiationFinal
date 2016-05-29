@@ -28,12 +28,12 @@ namespace Radiation_project
     {
 
         string connectionString = "server=localhost; database=radiationdb; user=root; password=; Allow Zero Datetime=True; Convert Zero Datetime=True";
+        Double latitude = 0.00, longitude = 0.00;
         public Dictionary<string, string> countyCoordinatesList = new Dictionary<string, string>();
         public MainWindow()
         {
             InitializeComponent();
             connectAndQueryDB();
-            
         }
 
 
@@ -207,8 +207,6 @@ namespace Radiation_project
             {
                 startDate.Background = (Brush)brush.ConvertFrom("#FFFFFF");
                 endDate.Background = (Brush)brush.ConvertFrom("#FFFFFF");
-                Double latitude = 0.00;
-                Double longitude = 0.00;
                 try
                 {
                     latitude = Double.Parse(latitudeTB.Text.ToString());
@@ -272,5 +270,6 @@ namespace Radiation_project
             }
             document.Close();
         }
+        //TODO: conectar lo que hace beto con su formulas y esconder los tabs inicialmente para que vayan apareciendo conforme se le da click a siguiente.
     }
 }

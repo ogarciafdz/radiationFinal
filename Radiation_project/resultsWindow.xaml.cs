@@ -133,6 +133,29 @@ namespace Radiation_project
                 ozLabel.Content = oz.ToString();
                 h0Label.Content = H0.ToString();
             }
+            else
+            {
+                double ws = 0.00;
+                double oz = 0.00;
+                double sConstant = 23.45 * Math.Sin((360.0 * ((294.0) / 365.0)));
+                double tanSconstant = Math.Tan(sConstant);
+                double tanLatitude = -Math.Tan(latitude);
+                double tanAngleTimesTanS = tanLatitude * tanSconstant;
+                ws = Math.Acos(tanAngleTimesTanS); //degrees
+                oz = (Math.Cos(latitude) * Math.Cos(sConstant) * Math.Sin(ws)) + (((Math.PI * ws) / 180) * Math.Sin(latitude) * Math.Sin(sConstant));
+                double radiationConstant = 0.333828427;
+                double x = 44567 / Math.PI;
+                double y = Math.Cos(360 * (1 / 365));
+                double z = (1 + 0.033 * Math.Cos(360 * (1 / 365)));
+                double a = ((x * (1 + 0.033 * y * oz)) / 1000000) * radiationConstant;
+                if (a > 0.00)
+                {
+                    H0 = H0 + a;
+                }
+                wsLabel.Content = ws.ToString();
+                ozLabel.Content = oz.ToString();
+                h0Label.Content = H0.ToString();
+            }
 
         }
 

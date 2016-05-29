@@ -42,7 +42,7 @@ namespace Radiation_project
 
         }
 
-        private void toAtras(object sender, RoutedEventArgs e)
+        public void toAtras()
         {
             resultsWindow f = new resultsWindow(start, end, lat, longi);
             f.Show();
@@ -283,7 +283,7 @@ namespace Radiation_project
             }
         }
 
-        private void toInversor(object sender, RoutedEventArgs e)
+        public void toInversor(object sender, RoutedEventArgs e)
         {
 
             {
